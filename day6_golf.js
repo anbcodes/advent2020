@@ -1,0 +1,2 @@
+console.log(String(require('fs').readFileSync('day6_input.txt')).split('\n\n').map(v=>v.split(/\n/g).map(q=>q.split('')).flat()).map(v=>[...new Set(v)].length).reduce((t,v)=>t+v, 0));
+console.log(String(require('fs').readFileSync('day6_input.txt')).split('\n\n').map(v=>v.split(/\n/g).map(q=>q.split(''))).map(v=>[v.flat(),v.length]).map(v=>[...new Set(v[0])].filter(q=>v[0].filter(w=>w==q).length===v[1]).length).reduce((t,v)=>t+v, 0));
